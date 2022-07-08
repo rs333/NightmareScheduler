@@ -1,0 +1,23 @@
+plugins {    
+    id 'application'    
+    // https://github.com/openjfx/javafx-gradle-plugin
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {    
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+javafx {
+    version = "11"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]    
+}
+
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+mainClassName = "GradleJavaFXExample.Main"
