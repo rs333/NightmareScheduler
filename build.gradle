@@ -20,4 +20,4 @@ javafx {
 
 sourceCompatibility = 1.11
 targetCompatibility = 1.11
-mainClassName = "GradleJavaFXExample.Main"
+mainClassName = "NightmareScheduler.Main"
