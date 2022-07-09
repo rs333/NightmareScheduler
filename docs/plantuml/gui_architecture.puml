@@ -1,0 +1,94 @@
+# NightmareScheduler GUI Architecture
+
+<div hidden>
+```
+@startuml
+together Framework {
+  together Starter {
+    class JavaFX::Application {
+
+    }
+    class NightmareScheduler {
+      +start()
+    }
+    class NightmareSchedulerStarter {
+      +main()
+    }
+    JavaFX::Application <|-- NightmareScheduler
+    NightmareScheduler <.. NightmareSchedulerStarter : launches
+  }
+
+  together Core {
+    class ViewHandler {
+      -ViewModelFactory vm
+    }
+    class ViewModelFactory {
+      -ModelFactory mf
+    }
+    class ModelFactory {
+
+    }
+    ViewHandler --> ViewModelFactory
+    ViewModelFactory --> ModelFactory
+  }
+  JavaFX::Application -[hidden] ViewHandler
+  NightmareScheduler .> ViewHandler : creates
+  NightmareScheduler .> ViewModelFactory : creates
+  NightmareScheduler .> ModelFactory : creates
+
+}
+together Views {
+
+  together Results {
+
+    file Results.fxml {
+
+    }
+    class ResultsController{
+      +void init(ResultsViewModel vm)
+    }
+    class ResultsViewModel {
+
+    }
+    Results.fxml --> ResultsController
+    ResultsController --> ResultsViewModel
+  }
+
+  together Input {
+    file Input.fxml {
+
+    }
+
+    class InputController {
+      +void init(InputViewModel vm)
+    }
+    class InputViewModel {
+
+    }
+    Input.fxml --> InputController
+    InputController --> InputViewModel
+  }
+
+  together Data {
+    interface ScheduleDataInterface {
+
+    }
+    class ScheduleDataModel {
+
+    }
+    InputViewModel --> ScheduleDataInterface
+    ResultsViewModel --> ScheduleDataInterface
+    ScheduleDataInterface <.. ScheduleDataModel
+
+  }
+}
+
+ModelFactory ..> ScheduleDataInterface
+ViewHandler ..> InputController
+ViewHandler ..[hidden]> ResultsController
+ViewModelFactory ..> InputViewModel
+ViewModelFactory ..[hidden]> ResultsViewModel
+@enduml
+```
+
+![](architecture.svg)
