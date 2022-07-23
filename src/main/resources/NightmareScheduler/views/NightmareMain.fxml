@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="21.0" layoutY="22.0" prefHeight="356.0" prefWidth="557.0" style="-fx-border-color: #808080;" />
+      <Button layoutX="229.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Add New Schedule" />
+      <Button layoutX="229.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Generate Time" />
+      <Button layoutX="229.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="View Current Schedules" />
+      <Text layoutX="199.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N I G H T M A R E      S C H E D U L E R" wrappingWidth="207.177734375" />
+      <Button layoutX="229.0" layoutY="238.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Delete One Schedule" />
+      <Button layoutX="229.0" layoutY="294.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Delete All Schedules" />
+   </children>
+</Pane>
